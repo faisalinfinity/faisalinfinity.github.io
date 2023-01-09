@@ -3,11 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import {ChakraProvider,ColorModeScript} from "@chakra-ui/react"
+import ScrollContextProvider from './Context/ScrollContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <ScrollContextProvider>
+    <ChakraProvider>
+      <ColorModeScript initialColorMode="light"></ColorModeScript>
+      <App />
+    </ChakraProvider>
+    </ScrollContextProvider>
+ 
   </React.StrictMode>
 );
 
