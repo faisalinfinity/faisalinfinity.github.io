@@ -1,51 +1,74 @@
-import { Center, Heading ,Icon} from "@chakra-ui/react";
+import { Center, Heading, Icon, Text } from "@chakra-ui/react";
 import React from "react";
 import { SiGithub } from "react-icons/si";
+import Styles from "../styles/stats.module.css";
+import GitHubCalendar from "github-calendar"
 
+// https://github-readme-streak-stats.herokuapp.com?user=
+// https://streak-stats.demolab.com?user=faisalinfinity&_border=true&theme=dark&hide_border=true&theme=react
+
+// https://github-readme-stats.vercel.app/api/top-langs/?username=
+// https://github-readme-stats-sigma-five.vercel.app/api?username=faisalinfinity&theme=react&border_radius=4.6&hide_border=true&layout=compact&show_icons=true"
+// https://github-readme-stats-sigma-five.vercel.app/api?username=faisalinfinity&theme=react&border_radius=4.6&hide_border=true&layout=compact&show_icons=true"
+// https://github-readme-stats.vercel.app/api?username=
+//https://github-readme-stats.vercel.app/api?username=faisalinfinity&theme=react&border_radius=4.6&hide_border=true&layout=compact&show_icons=true
+//https://github-readme-stats.vercel.app/api/top-langs/?username=faisalinfinity&theme=react&border_radius=4.6&show_icons=true&count_private=true&hide_border=true&show_icons=true
 const Githubstat = () => {
+ 
+ 
   return (
-    <div>
-        <br />
-        <Center>  <Heading ><Icon as={SiGithub}></Icon> Github Stats</Heading></Center>
-        <br />
-        <br />
-   
-      <p align="left">
+    <>
+      <br />
+      <Center>
         {" "}
-      {" "}
-      </p>
-
-      <div align="center" style={{ display: "flex", gap: "20px" }}>
-        <img
-          alt="streak"
-          src="https://github-readme-stats.vercel.app/api?username=faisalinfinity&theme=react&border_radius=4.6&hide_border=true&layout=compact&show_icons=true"
-         style={{width:"50%"}}
-        />
-
-        <div align="center" style={{ display: "flex" }}>
+        <Heading>
+          <Icon as={SiGithub}></Icon> Github Stats
+        </Heading>
+      </Center>
+      <div className={Styles.stats}>
+        <div style={{ columnSpan: "2" }}>
           <img
+            style={{ display: "block", margin: "auto" }}
+            id="github-streak-stats"
             alt="streak"
-            src="https://streak-stats.demolab.com?user=faisalinfinity&_border=true&theme=dark&hide_border=true&theme=react"
-            style={{width:"50%"}}
+            src="https://github-readme-streak-stats.herokuapp.com?user=faisalinfinity&_border=true&theme=dark&hide_border=true&theme=react"
+            // style={{ width: "50%" }}
           />
         </div>
 
-        <img
-          alt="streak"
-          src="https://github-readme-stats.vercel.app/api/top-langs/?username=faisalinfinity&theme=react&border_radius=4.6&show_icons=true&count_private=true&hide_border=true&show_icons=true"
-          style={{width:"50%"}}
-        />
-      </div>
+        <div align="center" className={Styles.stats2}>
+          <img
+          id="github-stats-card"
+            style={{ display: "block", margin: "auto" }}
+            alt="streak"
+            src="https://github-readme-stats.vercel.app/api?username=faisalinfinity&theme=react&border_radius=4.6&hide_border=true&layout=compact&show_icons=true"
+            // style={{ width: "50%" }}
+          />
 
-      <h2 align="left">⚡Activity Graph:</h2>
-   
-        <img
-          alt="Faisal Activity Graph"
-          src="https://github-readme-activity-graph.cyclic.app/graph?username=faisalinfinity&theme=react-dark&hide_border=true"
-        />
-     
-    </div>
+          <img
+          id="github-top-langs"
+            style={{ display: "block", margin: "auto" }}
+            alt="streak"
+            src="https://github-readme-stats.vercel.app/api/top-langs/?username=faisalinfinity&theme=react&border_radius=4.6&show_icons=true&count_private=true&hide_border=true&show_icons=true"
+            // style={{ width: "50%" }}
+          />
+        </div>
+        <div>
+          <Center>
+            <Text>⚡Activity Graph:</Text>
+          </Center>
+
+          <img
+            style={{ display: "block", margin: "auto", width: "80%" }}
+            alt="Faisal Activity Graph"
+            src="https://github-readme-activity-graph.cyclic.app/graph?username=faisalinfinity&theme=react-dark&hide_border=true"
+          />
+        </div>
+      
+       
+      </div>
+    </>
   );
 };
-
+   
 export default Githubstat;

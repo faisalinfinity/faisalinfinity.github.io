@@ -1,10 +1,7 @@
 import {
-  Avatar,
   Box,
   Button,
-  Center,
   chakra,
-  Container,
   Flex,
   Heading,
   HStack,
@@ -14,42 +11,110 @@ import {
   useColorModeValue,
   Text,
 } from "@chakra-ui/react";
-import { useContext, useEffect, useRef } from "react";
-import { DiBootstrap, DiCss3, DiGithub, DiJavascript } from "react-icons/di";
+import { useContext, useEffect } from "react";
+import { DiBootstrap, DiCss3, DiJavascript } from "react-icons/di";
 import { FaHtml5 } from "react-icons/fa";
+import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 import {
   SiChakraui,
+  SiExpress,
+  SiFirebase,
   SiGithub,
+  SiJavascript,
   SiJson,
+  SiMaterialui,
+  SiMongodb,
   SiNetlify,
+  SiNodedotjs,
   SiReact,
+  SiRedux,
 } from "react-icons/si";
 import { ScrollContext } from "../Context/ScrollContext";
-import Styles2 from "../styles/project.module.css";
+import "../styles/project.css";
 
 const testimonials = [
   {
-    name: "Brandon P.",
-    role: "A Social Media Managements Tool",
+    role: "Healthistic- a great place for people serious about health and fitness. We're a young start-up of around 400 people that work for your needs in fitness and well-being",
+    content: "Healthistic (HealthKart.in Clone) Full Stack App",
+    l1: "Mongodb",
+    l2: "Express",
+    l3: "React",
+    l4: "NodeJS",
+    l5: "Chakra",
+    l6: "Bcrypt",
+    Icon1: SiMongodb,
+    Icon3: SiNodedotjs,
+    Icon4: SiReact,
+    Icon2: SiExpress,
+    Icon5: SiChakraui,
+    url: "https://res.cloudinary.com/dq674z2lp/image/upload/v1680457610/18-admin-add-pc_uwpsgz.png",
+    github: "https://github.com/faisalinfinity/cuddly-smoke-9747",
+    netlify: "https://frontend-snowy-eta.vercel.app/",
+    light:
+      "https://res.cloudinary.com/dq674z2lp/image/upload/v1680457612/mobile_xgjbgy.png",
+  },
+  {
+    role: "Productify is an Ecommerce Website which serves as a platform by offering buyers and sellers a wide range of choice to buy and sell goods through listing format, item condition and delivery format.",
+    content: "Productify (Ebay.com Clone)",
+    l1: "Redux",
+    l2: "Firebase",
+    l3: "React",
+    l4: "JavaScript",
+    l5: "Chakra",
+    l6: "Bcrypt",
+    Icon1: SiRedux,
+    Icon3: SiJavascript,
+    Icon4: SiReact,
+    Icon2: SiFirebase,
+    Icon5: SiChakraui,
+    url: "https://res.cloudinary.com/dq674z2lp/image/upload/v1680538738/mobile_2_j3yfx3.png",
+    github: "https://github.com/faisalinfinity/hilarious-sort-6480",
+    netlify: "https://productify.vercel.app/",
+    light:
+      "https://res.cloudinary.com/dq674z2lp/image/upload/v1680538611/mobile_1_gi9c0h.png",
+  },
+  {
+    l1: "React",
+    l2: "Javacript",
+    l3: "Redux",
+    l4: "Firebase",
+    l5: "MUI",
+    l6: "React",
+    name: "Daniel T.",
+    role: "Musafir is a website for tours and travel created with one thought that is to empower Indian traveler with instant bookings and comprehensive choices.",
+    Icon1: SiReact,
+    Icon3: SiFirebase,
+    Icon4: SiRedux,
+    Icon2: DiJavascript,
+    Icon5: SiMaterialui,
+    content: "Musafir (Make my trip Clone)",
+    url: "https://i.postimg.cc/7hWcV4sV/musafir-dark.png",
+    github: "https://github.com/hr927/Musafir-mmt-clone-",
+    netlify: "https://musafir-mmt.netlify.app",
+    light: "https://i.postimg.cc/x13d6FQm/musafir-light.png",
+  },
+  {
+    role: "Mediagenix helps you build an audience organically. We’re a values-driven company that provides affordable, intuitive, marketing tools for ambitious people and teams",
     content: "Mediagenix (Buffer.com Clone)",
     l1: "React",
     l2: "Javacript",
     l3: "CSS",
     l4: "HTML",
-    l5: "Chakra-UI",
+    l5: "Chakra",
     l6: "Bootstrap",
     Icon1: SiReact,
     Icon3: FaHtml5,
     Icon4: DiCss3,
     Icon2: DiJavascript,
     Icon5: SiChakraui,
-    url: "https://i.postimg.cc/RVFsQKYY/Screenshot-2023-01-09-010734.png",
+    url: "https://i.postimg.cc/pd8M0mz6/mediagenix-dark.png",
     github:
       "https://github.com/faisalinfinity/limitless-temper-4281/tree/main/mediagenix",
     netlify: "https://mediagenix.netlify.app/",
+    light: "https://i.postimg.cc/7Y36R43V/mediagenix-light.png",
   },
   {
-    role: "A Freelancing Website",
+    role: "Hiring Heroes is a global online marketplace for freelance services. Fiverr’s platform connects freelancers to people or businesses looking to hire.",
     l1: "Bootstrap",
     l2: "Javacript",
     l3: "CSS",
@@ -62,13 +127,13 @@ const testimonials = [
     Icon2: DiJavascript,
     Icon5: SiJson,
     content: " Hiring Heroes (Fiverr.com Clone)",
-    url: "https://i.postimg.cc/RVFsQKYY/Screenshot-2023-01-09-010734.png",
+    url: "https://i.postimg.cc/4x0X2CMm/hh-dark.png",
     github: "https://github.com/Tushit99/tedious-advertisement-2369",
     netlify: "https://helpful-cheesecake-78e935.netlify.app/",
+    light: "https://i.postimg.cc/HssHps1r/hh-light.png",
   },
   {
-    name: "Darcy L.",
-    role: "A Time Management Website",
+    role: "TimeCamp is a simple, yet feature-rich time tracking app to help you gain insights into yourprojects and tasks.",
     l1: "Bootstrap",
     l2: "Javacript",
     l3: "CSS",
@@ -81,47 +146,26 @@ const testimonials = [
     Icon2: DiJavascript,
     Icon5: SiJson,
     content: "TimeCamp.com (Clone)",
-    url: "https://i.postimg.cc/RVFsQKYY/Screenshot-2023-01-09-010734.png",
+    url: "https://i.postimg.cc/vmmG3Y3R/tc-light.png",
     github: "https://github.com/faisalinfinity/utmost-creature-1022",
     netlify: "https://incomparable-sable-d0bb36.netlify.app/",
+    light: "https://i.postimg.cc/DfQyvMWM/tc-dark.png",
   },
-  {
-    name: "Daniel T.",
-    role: "Musician",
-    Icon1: SiReact,
-    Icon3: FaHtml5,
-    Icon4: DiCss3,
-    Icon2: DiJavascript,
-    Icon5: SiChakraui,
-    content:
-      "I am so pleased with this product. EEZY is both attractive and highly adaptable. Without EEZY, we would have gone bankrupt by now. Thank you for creating this product!",
-    url: "https://i.postimg.cc/RVFsQKYY/Screenshot-2023-01-09-010734.png",
-    github: "",
-    netlify: "",
-  },
+  
 ];
 
-const backgrounds = [
+export const backgrounds = [
   `url("data:image/svg+xml, %3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'560\' height=\'185\' viewBox=\'0 0 560 185\' fill=\'none\'%3E%3Cellipse cx=\'102.633\' cy=\'61.0737\' rx=\'102.633\' ry=\'61.0737\' fill=\'%23ED64A6\' /%3E%3Cellipse cx=\'399.573\' cy=\'123.926\' rx=\'102.633\' ry=\'61.0737\' fill=\'%23F56565\' /%3E%3Cellipse cx=\'366.192\' cy=\'73.2292\' rx=\'193.808\' ry=\'73.2292\' fill=\'%2338B2AC\' /%3E%3Cellipse cx=\'222.705\' cy=\'110.585\' rx=\'193.808\' ry=\'73.2292\' fill=\'%23ED8936\' /%3E%3C/svg%3E")`,
   `url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='560' height='185' viewBox='0 0 560 185' fill='none'%3E%3Cellipse cx='457.367' cy='123.926' rx='102.633' ry='61.0737' transform='rotate(-180 457.367 123.926)' fill='%23ED8936'/%3E%3Cellipse cx='160.427' cy='61.0737' rx='102.633' ry='61.0737' transform='rotate(-180 160.427 61.0737)' fill='%2348BB78'/%3E%3Cellipse cx='193.808' cy='111.771' rx='193.808' ry='73.2292' transform='rotate(-180 193.808 111.771)' fill='%230BC5EA'/%3E%3Cellipse cx='337.295' cy='74.415' rx='193.808' ry='73.2292' transform='rotate(-180 337.295 74.415)' fill='%23ED64A6'/%3E%3C/svg%3E")`,
   `url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='560' height='185' viewBox='0 0 560 185' fill='none'%3E%3Cellipse cx='102.633' cy='61.0737' rx='102.633' ry='61.0737' fill='%23ED8936'/%3E%3Cellipse cx='399.573' cy='123.926' rx='102.633' ry='61.0737' fill='%2348BB78'/%3E%3Cellipse cx='366.192' cy='73.2292' rx='193.808' ry='73.2292' fill='%230BC5EA'/%3E%3Cellipse cx='222.705' cy='110.585' rx='193.808' ry='73.2292' fill='%23ED64A6'/%3E%3C/svg%3E")`,
   `url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='560' height='185' viewBox='0 0 560 185' fill='none'%3E%3Cellipse cx='457.367' cy='123.926' rx='102.633' ry='61.0737' transform='rotate(-180 457.367 123.926)' fill='%23ECC94B'/%3E%3Cellipse cx='160.427' cy='61.0737' rx='102.633' ry='61.0737' transform='rotate(-180 160.427 61.0737)' fill='%239F7AEA'/%3E%3Cellipse cx='193.808' cy='111.771' rx='193.808' ry='73.2292' transform='rotate(-180 193.808 111.771)' fill='%234299E1'/%3E%3Cellipse cx='337.295' cy='74.415' rx='193.808' ry='73.2292' transform='rotate(-180 337.295 74.415)' fill='%2348BB78'/%3E%3C/svg%3E")`,
 ];
 
-interface TestimonialCardProps {
-  name: string;
-  role: string;
-  content: string;
-  avatar: string;
-  index: number;
-}
 
-function TestimonialCard(props: TestimonialCardProps) {
+function TestimonialCard(props) {
   const {
-    name,
     role,
     content,
-    avatar,
     index,
     Icon2,
     Icon3,
@@ -134,12 +178,13 @@ function TestimonialCard(props: TestimonialCardProps) {
     l3,
     l4,
     l5,
-    l6,
     netlify,
     github,
+    light,
   } = props;
   return (
     <Flex
+      className="project-card"
       boxShadow={"lg"}
       maxW={"640px"}
       direction={{ base: "column-reverse", md: "row" }}
@@ -147,6 +192,8 @@ function TestimonialCard(props: TestimonialCardProps) {
       rounded={"xl"}
       p={10}
       justifyContent={"space-between"}
+      alignItems={{ base: "center" }}
+      gap={{ base: "10px" }}
       position={"relative"}
       bg={useColorModeValue("white", "gray.800")}
       _after={{
@@ -171,7 +218,7 @@ function TestimonialCard(props: TestimonialCardProps) {
         backgroundSize: "cover",
         top: 0,
         left: 0,
-        backgroundImage: backgrounds[index % 4],
+        backgroundImage: useColorModeValue(backgrounds[index % 4], ""),
       }}
     >
       <Flex
@@ -179,19 +226,23 @@ function TestimonialCard(props: TestimonialCardProps) {
         textAlign={"left"}
         justifyContent={"space-between"}
       >
-        <Heading fontSize={"15px"}>{content}</Heading>
+        <Heading className="project-title" fontSize={"20px"}>
+          {content}
+        </Heading>
+        <br />
         <chakra.p
-          fontFamily={"Inter"}
+          fontFamily={"san-serif"}
           fontWeight={"medium"}
           fontSize={"15px"}
           pb={4}
+          className="project-description"
         >
           {role}
         </chakra.p>
         <chakra.p fontFamily={"Work Sans"} fontWeight={"bold"} fontSize={14}>
           <HStack>
             <Button
-              className={Styles2.glow2}
+              className="project-github-link"
               bg={"black"}
               color={useColorModeValue("white", "white")}
               leftIcon={<SiGithub />}
@@ -205,7 +256,7 @@ function TestimonialCard(props: TestimonialCardProps) {
             </Button>
             <Button
               leftIcon={<SiNetlify />}
-              className={Styles2.glow2}
+              className="project-deployed-link"
               bgGradient={useColorModeValue(
                 "linear(to-br, blue.600, teal.300, blue.200)",
                 "linear(to-r, cyan.400, blue.500, purple.600)"
@@ -217,7 +268,7 @@ function TestimonialCard(props: TestimonialCardProps) {
           </HStack>
 
           <chakra.span
-            fontFamily={"Inter"}
+            fontFamily={"san-serif"}
             fontWeight={"medium"}
             color={"gray.500"}
           >
@@ -227,7 +278,7 @@ function TestimonialCard(props: TestimonialCardProps) {
         <br />
         <Text fontWeight={"bold"}>Tech Stack</Text>
         <br />
-        <HStack>
+        <HStack className="project-tech-stack">
           <Text>
             {" "}
             <Icon
@@ -289,31 +340,39 @@ function TestimonialCard(props: TestimonialCardProps) {
           </Text>
         </HStack>
       </Flex>
-      <Image w={"40%"} h="90%" src={url} alt="d"></Image>
+      <Image
+        w={"50%"}
+        h="50%"
+        src={useColorModeValue(light, url)}
+        alt="d"
+      ></Image>
     </Flex>
   );
 }
 
-export default function Projects({projectRef}) {
-  const {scrollref,setscroll}=useContext(ScrollContext)
+export default function Projects({ projectRef, device }) {
+  const { scrollref} = useContext(ScrollContext);
 
- 
-  useEffect(()=>{
-    scrollref?.current.scrollIntoView({ behavior: 'smooth' });
-  },[scrollref])
+  useEffect(() => {
+    scrollref?.current.scrollIntoView({ behavior: "smooth" });
+  }, [scrollref]);
 
-  
   return (
-    <Flex ref={projectRef}
+    <Flex
+      m="auto"
+      // mr={device==="Android"?"30px":""}
+      ref={projectRef}
+      padding={"20px"}
       textAlign={"center"}
       pt={10}
       justifyContent={"center"}
       direction={"column"}
       width={"full"}
+      id="projects"
     >
-      <Box   width={{ base: "full", sm: "lg", lg: "xl" }} margin={"auto"}>
+      <Box width={{ base: "full", sm: "lg", lg: "xl" }} margin={"auto"}>
         <chakra.h3
-          fontFamily={"Work Sans"}
+          fontFamily={"san-serif"}
           fontWeight={"bold"}
           fontSize={20}
           textTransform={"uppercase"}
@@ -321,19 +380,24 @@ export default function Projects({projectRef}) {
         ></chakra.h3>
         <chakra.h1
           name="project"
-         
+          display={"flex"}
+          flexDirection="row"
+          gap="10px"
+          justifyContent={"center"}
+          alignItems="center"
           py={5}
           fontSize={48}
-          fontFamily={"Work Sans"}
+          fontFamily={"san-serif"}
           fontWeight={"bold"}
           color={useColorModeValue("gray.700", "gray.50")}
         >
-          Projects
+          <Icon display={"block"} as={AiOutlineFundProjectionScreen} />
+          <Text display={"block"}>Projects</Text>
         </chakra.h1>
         <chakra.h2
           margin={"auto"}
           width={"70%"}
-          fontFamily={"Inter"}
+          fontFamily={"san-serif"}
           fontWeight={"medium"}
           color={useColorModeValue("gray.500", "gray.400")}
         >
@@ -349,7 +413,7 @@ export default function Projects({projectRef}) {
         mx={"auto"}
       >
         {testimonials.map((cardInfo, index) => (
-          <TestimonialCard {...cardInfo} index={index} />
+          <TestimonialCard key={index} {...cardInfo} index={index} />
         ))}
       </SimpleGrid>
       <Box>

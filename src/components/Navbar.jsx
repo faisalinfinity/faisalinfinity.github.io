@@ -1,139 +1,56 @@
-// import { ReactNode } from "react";
-// import {
-//   Box,
-//   Flex,
-//   Avatar,
-//   Link,
-//   Button,
-//   Menu,
-//   MenuButton,
-//   MenuList,
-//   MenuItem,
-//   MenuDivider,
-//   useDisclosure,
-//   useColorModeValue,
-//   Stack,
-//   useColorMode,
-//   Center,
-// } from "@chakra-ui/react";
-// import { MoonIcon, SunIcon } from "@chakra-ui/icons";
+import "../styles/navbtn.css";
+import { FaSun, FaMoon } from "react-icons/fa";
+import { ImEarth } from "react-icons/im";
+import { GrDocumentPdf } from "react-icons/gr";
+import { FcAbout } from "react-icons/fc";
+import { MdMilitaryTech, MdContacts } from "react-icons/md";
+import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 
-// const NavLink = () => (
-//   <Link
-//     px={2}
-//     py={1}
-//     rounded={"md"}
-//     _hover={{
-//       textDecoration: "none",
-//       bg: useColorModeValue("gray.200", "gray.700"),
-//     }}
-//     href={"#"}
-//   ></Link>
-// );
-
-// export default function Navbar() {
-//   const { colorMode, toggleColorMode } = useColorMode();
-
-//   return (
-//     <>
-//       <Box
-//         w={"100%"}
-//         as="header"
-//         position="fixed"
-//         bg={useColorModeValue("white", "black")}
-//         px={4}
-//         bgGradient={useColorModeValue(
-//           "linear(to-r, cyan.400, teal.100, purple.600)",
-//           "linear(to-r, cyan.400, blue.500, purple.600)"
-//         )}
-//       >
-//         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-//
-
-//           <Flex alignItems={"center"}>
-//             <Stack direction={"row"} spacing={7}>
-//               <Button onClick={toggleColorMode}>
-//                 {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-//               </Button>
-
-//               <Menu>
-//                 <MenuButton
-//                   as={Button}
-//                   rounded={"full"}
-//                   variant={"link"}
-//                   cursor={"pointer"}
-//                   minW={0}
-//                 >
-//                   <Avatar
-//                     size={"sm"}
-//                     src={"https://avatars.dicebear.com/api/male/username.svg"}
-//                   />
-//                 </MenuButton>
-//                 <MenuList alignItems={"center"}>
-//                   <br />
-//                   <Center>
-//                     <Avatar
-//                       size={"2xl"}
-//                       src={"https://avatars.dicebear.com/api/male/username.svg"}
-//                     />
-//                   </Center>
-//                   <br />
-//                   <Center>
-//                     <p>Username</p>
-//                   </Center>
-//                   <br />
-//                   <MenuDivider />
-//                   <MenuItem>Your Servers</MenuItem>
-//                   <MenuItem>Account Settings</MenuItem>
-//                   <MenuItem>Logout</MenuItem>
-//                 </MenuList>
-//               </Menu>
-//             </Stack>
-//           </Flex>
-//         </Flex>
-//       </Box>
-//     </>
-//   );
-// }
-import { FaSun, FaMoon } from 'react-icons/fa'
 import {
   Box,
   Flex,
-  Avatar,
   HStack,
-  Link,
   IconButton,
   Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
   useDisclosure,
   useColorModeValue,
   Stack,
-  ButtonGroup,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-import { useColorMode } from '@chakra-ui/react';
-import { useContext, useEffect } from 'react';
-import { ScrollContext } from '../Context/ScrollContext';
-export default function Navbar({sections}) {
+import { useColorMode } from "@chakra-ui/react";
+import { useContext, useEffect } from "react";
+import { ScrollContext } from "../Context/ScrollContext";
+import faisal from "./Faisal-Mujtaba-Resume.pdf";
+export default function Navbar({ sections }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const isDark = colorMode === "dark";
-  const {scrollref,setscroll}=useContext(ScrollContext);
+  const { scrollref, setscroll } = useContext(ScrollContext);
+
   const handleClick = (ref) => {
-    setscroll(ref)
-    ref.current.scrollIntoView({ behavior: 'smooth' });
+    setscroll(ref);
+    ref.current.scrollIntoView({ behavior: "smooth" });
   };
-  useEffect(()=>{
-    scrollref?.current.scrollIntoView({ behavior: 'smooth' });
-  },[scrollref])
+
+  function downloadFile() {
+    let link = document.createElement("a");
+    link.download = "Faisal-Mujtaba-Resume.pdf";
+    link.href = faisal;
+    link.click();
+    link.remove();
+  }
+
+  useEffect(() => {
+    scrollref?.current.scrollIntoView({ behavior: "smooth" });
+  }, [scrollref]);
+
   return (
     <>
-      <Box  w={"100%"} position="fixed"
-      zIndex={"4"}
+      <Box
+        id="nav-menu"
+        w={"100%"}
+        position="fixed"
+        zIndex={"4"}
         bgGradient={useColorModeValue(
           "linear(to-r, cyan.400, teal.100, purple.600)",
           "linear(to-r, cyan.400, blue.500, purple.600)"
@@ -142,117 +59,216 @@ export default function Navbar({sections}) {
       >
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
+            bg={"none"}
             size={"md"}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
             aria-label={"Open Menu"}
             display={{ md: "none" }}
             onClick={isOpen ? onClose : onOpen}
           />
-          <HStack spacing={8} alignItems={"center"}>
-            <Box>Home</Box>
+          <HStack id="navbtn" spacing={8} alignItems={"center"}>
+            <Button
+              onClick={() => handleClick(sections.aboutRef)}
+              bg="none"
+              leftIcon={<ImEarth />}
+              className="nav-link home"
+            >
+              {" "}
+              Home
+            </Button>
             <HStack
               as={"nav"}
               spacing={4}
               display={{ base: "none", md: "flex" }}
             >
               <Button
-               onClick={()=>handleClick(sections.aboutRef)}
+                leftIcon={<FcAbout />}
+                bg={"none"}
+                onClick={() => handleClick(sections.aboutRef)}
                 px={2}
                 py={1}
                 rounded={"md"}
                 _hover={{
                   textDecoration: "none",
                   bg: useColorModeValue("gray.200", "gray.700"),
+                  color: "white",
                 }}
-                href={"#"}
+                className="nav-link about"
               >
                 About Me
               </Button>
               <Button
-               onClick={()=>handleClick(sections.skillsRef)}
+                leftIcon={<MdMilitaryTech />}
+                bg={"none"}
+                onClick={() => handleClick(sections.skillsRef)}
                 px={2}
                 py={1}
                 rounded={"md"}
                 _hover={{
                   textDecoration: "none",
                   bg: useColorModeValue("gray.200", "gray.700"),
+                  color: "white",
                 }}
-                href={"#"}
+                className="nav-link skills"
               >
                 Skills
               </Button>
               <Button
-              onClick={()=>handleClick(sections.projectRef)}
+                leftIcon={<AiOutlineFundProjectionScreen />}
+                bg={"none"}
+                onClick={() => handleClick(sections.projectRef)}
                 px={2}
                 py={1}
                 rounded={"md"}
                 _hover={{
                   textDecoration: "none",
                   bg: useColorModeValue("gray.200", "gray.700"),
+                  color: "white",
                 }}
-                href={"#"}
+                className="nav-link projects"
               >
                 Projects
               </Button>
               <Button
+                leftIcon={<MdContacts />}
+                bg={"none"}
+                onClick={() => handleClick(sections.contactRef)}
                 px={2}
                 py={1}
                 rounded={"md"}
                 _hover={{
                   textDecoration: "none",
                   bg: useColorModeValue("gray.200", "gray.700"),
+                  color: "white",
                 }}
-                href={"#"}
+                className="nav-link contact"
               >
                 Contact
               </Button>
               <Button
+                leftIcon={<GrDocumentPdf />}
+                onClick={() => {
+                  window.open(
+                    "https://drive.google.com/file/d/1w6skRez72kCV9W7hv4TTjIqgrYb9NASF/view?usp=share_link"
+                  );
+                  downloadFile();
+                }}
+                bg="none"
                 px={2}
                 py={1}
                 rounded={"md"}
                 _hover={{
                   textDecoration: "none",
                   bg: useColorModeValue("gray.200", "gray.700"),
+                  color: "white",
                 }}
-                href={"#"}
+                className="nav-link resume"
+                id="resume-button-1"
               >
                 Resume
               </Button>
             </HStack>
           </HStack>
           <Flex alignItems={"center"}>
-            
-           
-              
-            
-               <IconButton ml={8} icon={isDark ? <FaSun /> : <FaMoon />} isRound='true' onClick={toggleColorMode}></IconButton>  
-           
-           
-            
+            <IconButton
+              bg={"none"}
+              ml={8}
+              icon={isDark ? <FaSun /> : <FaMoon />}
+              isRound="true"
+              onClick={toggleColorMode}
+            ></IconButton>
           </Flex>
         </Flex>
 
         {isOpen ? (
           <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>
-              <Link
+              <Button
+                leftIcon={<FcAbout />}
+                bg={"none"}
+                onClick={() => handleClick(sections.aboutRef)}
                 px={2}
                 py={1}
                 rounded={"md"}
                 _hover={{
                   textDecoration: "none",
                   bg: "gray.200",
+                  color: "black",
                 }}
                 href={"#"}
               >
-                Hello
-              </Link>
+                About Me
+              </Button>
+              <Button
+                leftIcon={<MdMilitaryTech />}
+                bg={"none"}
+                onClick={() => handleClick(sections.skillsRef)}
+                px={2}
+                py={1}
+                rounded={"md"}
+                _hover={{
+                  textDecoration: "none",
+                  bg: "gray.200",
+                  color: "black",
+                }}
+                href={"#"}
+              >
+                Skills
+              </Button>
+              <Button
+                leftIcon={<AiOutlineFundProjectionScreen />}
+                bg={"none"}
+                onClick={() => handleClick(sections.projectRef)}
+                px={2}
+                py={1}
+                rounded={"md"}
+                _hover={{
+                  textDecoration: "none",
+                  bg: "gray.200",
+                  color: "black",
+                }}
+                href={"#"}
+              >
+                Projects
+              </Button>
+              <Button
+                leftIcon={<MdContacts />}
+                onClick={() => handleClick(sections.contactRef)}
+                bg={"none"}
+                px={2}
+                py={1}
+                rounded={"md"}
+                _hover={{
+                  textDecoration: "none",
+                  bg: "gray.200",
+                  color: "black",
+                }}
+                href={"#"}
+              >
+                Contact
+              </Button>
+              <Button
+                leftIcon={<GrDocumentPdf />}
+                onClick={() =>
+                  (window.location.href =
+                    "https://drive.google.com/uc?id=1w6skRez72kCV9W7hv4TTjIqgrYb9NASF&export=download")
+                }
+                bg={"none"}
+                px={2}
+                py={1}
+                rounded={"md"}
+                _hover={{
+                  color: "black",
+                  textDecoration: "none",
+                  bg: "gray.200",
+                }}
+              >
+                Resume
+              </Button>
             </Stack>
           </Box>
         ) : null}
       </Box>
-
-      <Box p={4}>Main Content Here</Box>
     </>
   );
 }

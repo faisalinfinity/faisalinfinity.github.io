@@ -1,246 +1,421 @@
-import React, { useContext, useEffect, useRef } from 'react'
-import { Flex,Grid,Heading,Icon,Text, useMediaQuery } from '@chakra-ui/react'
-import { DiCodeigniter, DiAndroid,} from "react-icons/di";
-import { FaReact } from 'react-icons/fa'
-import {SiChakraui, SiJavascript,SiMaterialui,SiMongodb,SiNetlify,SiNodedotjs,SiRedux, SiTypescript } from 'react-icons/si'
-import { IoLogoCss3, IoLogoNpm } from 'react-icons/io'
-import {TbBrandNextjs, TbBrandVercel } from 'react-icons/tb'
-import { ScrollContext } from '../Context/ScrollContext';
+import React, { useContext, useEffect, useRef } from "react";
+import {
+  Box,
+  Flex,
+  Grid,
+  Heading,
+  Icon,
+  Text,
+  useMediaQuery,
+} from "@chakra-ui/react";
 
-const Skills = ({skillsRef}) => {
-    const [isNotSmallerScreen] = useMediaQuery("(min-width:600px)");
-    const {scrollref,setscroll}=useContext(ScrollContext)
+import { FaReact } from "react-icons/fa";
+import {
+  SiChakraui,
+  SiExpress,
+  SiHtml5,
+  SiJavascript,
+  SiMaterialui,
+  SiMongodb,
+  SiNodedotjs,
+  SiRedux,
+  SiTypescript,
+} from "react-icons/si";
+import { IoLogoCss3 } from "react-icons/io";
+import { TbBrandNextjs } from "react-icons/tb";
+import { MdMilitaryTech } from "react-icons/md";
+const Skills = ({ skillsRef }) => {
+  const [isNotSmallerScreen] = useMediaQuery("(min-width:600px)");
 
-  
   return (
-   <>
-   <Heading ref={skillsRef} name="skills">Skills</Heading>
-    <Grid p={"40px"} templateColumns={{base:"repeat(2,1fr)",lg:"repeat(4,1fr)"}} direction={isNotSmallerScreen ? "row" : "column"} mt={8}>
-          <Flex
-            rounded="xl"
-            direction="column"
-            mt={4}
-            bg="blue.400"
-            h="30vh"
-            w="30vh"
-            justify="flex-end"
+    <Box ref={skillsRef} name="skills" id="skills">
+      <Heading
+        display={"flex"}
+        flexDirection="row"
+        gap="10px"
+        justifyContent={"center"}
+        alignItems="center"
+      >
+        <Icon as={MdMilitaryTech}></Icon>
+        <Text>Skills</Text>
+      </Heading>
+      <Grid
+        className="skills-card"
+        p={"0 20px 0 20px"}
+       
+        templateColumns={{
+          base: "repeat(2,1fr)",
+          md: "repeat(3,1fr)",
+          lg: "repeat(4,1fr)",
+        }}
+        gap="10px"
+        direction={isNotSmallerScreen ? "row" : "column"}
+        mt={8}
+      >
+        <Flex
+          className="skills-card"
+          rounded="xl"
+          direction="column"
+          mt={4}
+          bg="blue.400"
+          h={{ base: "20vh", lg: "25vh" }}
+          w={{ base: "20vh", lg: "25vh" }}
+          justify="flex-end"
+          onClick={()=>window.open("https://reactjs.org/")}
+        >
+          <Icon
+            color="white"
+            p="4"
+            as={FaReact}
+            w="20"
+            h="20"
+            className="skills-card-img"
+          />
+          <Text
+            className="skills-card-name"
+            color="white"
+            p="4"
+            fontWeight="semibold"
           >
-            <Icon color="white" p="4" as={FaReact} w="24" h="24" />
-            <Text color="white" p="4" fontSize="xl" fontWeight="semibold">
-              React
-            </Text>
-          </Flex>
-          <Flex
-            rounded="xl"
-            direction="column"
-            mt={4}
-            ml={isNotSmallerScreen ? 4 : 0}
-            bg="gray.100"
-            h="30vh"
-            w="30vh"
-            justify="flex-end"
-            _hover={{ bg: "teal.400" }}
+            React
+          </Text>
+        </Flex>
+        <Flex
+          className="skills-card"
+          rounded="xl"
+          direction="column"
+          mt={4}
+          ml={isNotSmallerScreen ? 4 : 0}
+          bg="gray.100"
+          h={{ base: "20vh", lg: "25vh" }}
+          w={{ base: "20vh", lg: "25vh" }}
+          justify="flex-end"
+          _hover={{ bg: "teal.400" }}
+          onClick={()=>window.open("https://redux.js.org/")}
+        >
+          <Icon
+            className="skills-card-img"
+            color="black"
+            p="4"
+            as={SiRedux}
+            w="20"
+            h="20"
+          />
+          <Text
+            className="skills-card-name"
+            color="black"
+            p="4"
+            fontWeight="semibold"
           >
-            <Icon color="black" p="4" as={SiRedux} w="24" h="24" />
-            <Text color="black" p="4" fontSize="xl" fontWeight="semibold">
-             Redux
-            </Text>
-          </Flex>
-          <Flex
-            rounded="xl"
-            direction="column"
-            mt={4}
-            ml={isNotSmallerScreen ? 4 : 0}
-            bg="gray.100"
-            h="30vh"
-            w="30vh"
-            justify="flex-end"
-            _hover={{ bg: "green.400" }}
+            Redux
+          </Text>
+        </Flex>
+        <Flex
+          className="skills-card"
+          rounded="xl"
+          direction="column"
+          mt={4}
+          ml={isNotSmallerScreen ? 4 : 0}
+          bg="gray.100"
+          h={{ base: "20vh", lg: "25vh" }}
+          w={{ base: "20vh", lg: "25vh" }}
+          justify="flex-end"
+          _hover={{ bg: "green.400" }}
+          onClick={()=>window.open("https://developer.mozilla.org/en-US/docs/Web/JavaScript")}
+        >
+          <Icon
+            className="skills-card-img"
+            as={SiJavascript}
+            p="4"
+            w="20"
+            h="20"
+            color="black"
+          />
+          <Text
+            className="skills-card-name"
+            color="black"
+            p="4"
+            fontWeight="semibold"
           >
-            <Icon as={SiJavascript} p="4" w="24" h="24" color="black" />
-            <Text color="black" p="4" fontSize="xl" fontWeight="semibold">
-             JavaScript
-            </Text>
-          </Flex>
-          <Flex
-            rounded="xl"
-            direction="column"
-            mt={4}
-            ml={isNotSmallerScreen ? 4 : 0}
-            bg="gray.100"
-            h="30vh"
-            w="30vh"
-            justify="flex-end"
-            _hover={{ bg: "green.400" }}
+            JavaScript
+          </Text>
+        </Flex>
+        <Flex
+          className="skills-card"
+          rounded="xl"
+          direction="column"
+          mt={4}
+          ml={isNotSmallerScreen ? 4 : 0}
+          bg="gray.100"
+          h={{ base: "20vh", lg: "25vh" }}
+          w={{ base: "20vh", lg: "25vh" }}
+          justify="flex-end"
+          _hover={{ bg: "green.400" }}
+          onClick={()=>window.open("https://www.typescriptlang.org/")}
+        >
+          <Icon
+            className="skills-card-img"
+            as={SiTypescript}
+            p="4"
+            w="20"
+            h="20"
+            color="black"
+          />
+          <Text
+            className="skills-card-name"
+            color="black"
+            p="4"
+            fontWeight="semibold"
           >
-            <Icon as={SiTypescript} p="4" w="24" h="24" color="black" />
-            <Text color="black" p="4" fontSize="xl" fontWeight="semibold">
-             TypeScript
-            </Text>
-          </Flex>
-          <Flex
-            rounded="xl"
-            direction="column"
-            mt={4}
-            ml={isNotSmallerScreen ? 4 : 0}
-            bg="gray.100"
-            h="30vh"
-            w="30vh"
-            justify="flex-end"
-            _hover={{ bg: "green.400" }}
+            TypeScript
+          </Text>
+        </Flex>
+        <Flex
+          className="skills-card"
+          rounded="xl"
+          direction="column"
+          mt={4}
+          ml={isNotSmallerScreen ? 4 : 0}
+          bg="gray.100"
+          h={{ base: "20vh", lg: "25vh" }}
+          w={{ base: "20vh", lg: "25vh" }}
+          justify="flex-end"
+          _hover={{ bg: "green.400" }}
+          onClick={()=>window.open("https://developer.mozilla.org/en-US/docs/Web/CSS")}
+        >
+          <Icon
+            className="skills-card-img"
+            as={IoLogoCss3}
+            p="4"
+            w="20"
+            h="20"
+            color="black"
+          />
+          <Text
+            className="skills-card-name"
+            color="black"
+            p="4"
+            fontWeight="semibold"
           >
-            <Icon as={IoLogoCss3} p="4" w="24" h="24" color="black" />
-            <Text color="black" p="4" fontSize="xl" fontWeight="semibold">
-             CSS3
-            </Text>
-          </Flex>
-          <Flex
-            rounded="xl"
-            direction="column"
-            mt={4}
-            ml={isNotSmallerScreen ? 4 : 0}
-            bg="gray.100"
-            h="30vh"
-            w="30vh"
-            justify="flex-end"
-            _hover={{ bg: "green.400" }}
+            CSS3
+          </Text>
+        </Flex>
+        <Flex
+          className="skills-card"
+          rounded="xl"
+          direction="column"
+          mt={4}
+          ml={isNotSmallerScreen ? 4 : 0}
+          bg="gray.100"
+          h={{ base: "20vh", lg: "25vh" }}
+          w={{ base: "20vh", lg: "25vh" }}
+          justify="flex-end"
+          _hover={{ bg: "green.400" }}
+          onClick={()=>window.open("https://developer.mozilla.org/en-US/docs/Web/HTML")}
+        >
+          <Icon
+            className="skills-card-img"
+            as={SiHtml5}
+            p="4"
+            w="20"
+            h="20"
+            color="black"
+          />
+          <Text
+            className="skills-card-name"
+            color="black"
+            p="4"
+            fontWeight="semibold"
           >
-            <Icon as={IoLogoNpm} p="4" w="24" h="24" color="black" />
-            <Text color="black" p="4" fontSize="xl" fontWeight="semibold">
-          NPM
-            </Text>
-          </Flex>
-          <Flex
-            rounded="xl"
-            direction="column"
-            mt={4}
-            ml={isNotSmallerScreen ? 4 : 0}
-            bg="gray.100"
-            h="30vh"
-            w="30vh"
-            justify="flex-end"
-            _hover={{ bg: "green.400" }}
-          >
-            <Icon as={SiNodedotjs} p="4" w="24" h="24" color="black" />
-            <Text color="black" p="4" fontSize="xl" fontWeight="semibold">
-             NodeJs
-            </Text>
-          </Flex>
-          <Flex
-            rounded="xl"
-            direction="column"
-            mt={4}
-            ml={isNotSmallerScreen ? 4 : 0}
-            bg="gray.100"
-            h="30vh"
-            w="30vh"
-            justify="flex-end"
-            _hover={{ bg: "green.400" }}
-          >
-            <Icon as={SiMongodb} p="4" w="24" h="24" color="black" />
-            <Text color="black" p="4" fontSize="xl" fontWeight="semibold">
-           MongoDB
-            </Text>
-          </Flex>
-          <Flex
-            rounded="xl"
-            direction="column"
-            mt={4}
-            ml={isNotSmallerScreen ? 4 : 0}
-            bg="gray.100"
-            h="30vh"
-            w="30vh"
-            justify="flex-end"
-            _hover={{ bg: "green.400" }}
-          >
-            <Icon as={SiNetlify} p="4" w="24" h="24" color="black" />
-            <Text color="black" p="4" fontSize="xl" fontWeight="semibold">
-            Netlify
-            </Text>
-          </Flex>
-          <Flex
-            rounded="xl"
-            direction="column"
-            mt={4}
-            ml={isNotSmallerScreen ? 4 : 0}
-            bg="gray.100"
-            h="30vh"
-            w="30vh"
-            justify="flex-end"
-            _hover={{ bg: "green.400" }}
-          >
-            <Icon as={SiMaterialui} p="4" w="24" h="24" color="black" />
-            <Text color="black" p="4" fontSize="xl" fontWeight="semibold">
-            Material UI
-            </Text>
-          </Flex>
-          <Flex
-            rounded="xl"
-            direction="column"
-            mt={4}
-            ml={isNotSmallerScreen ? 4 : 0}
-            bg="gray.100"
-            h="30vh"
-            w="30vh"
-            justify="flex-end"
-            _hover={{ bg: "green.400" }}
-          >
-            <Icon as={TbBrandNextjs} p="4" w="24" h="24" color="black" />
-            <Text color="black" p="4" fontSize="xl" fontWeight="semibold">
-             NextJS
-            </Text>
-          </Flex>
-          <Flex
-            rounded="xl"
-            direction="column"
-            mt={4}
-            ml={isNotSmallerScreen ? 4 : 0}
-            bg="gray.100"
-            h="30vh"
-            w="30vh"
-            justify="flex-end"
-            _hover={{ bg: "green.400" }}
-          >
-            <Icon as={SiChakraui} p="4" w="24" h="24" color="black" />
-            <Text color="black" p="4" fontSize="xl" fontWeight="semibold">
-             Chakra UI
-            </Text>
-          </Flex>
-          <Flex
-            rounded="xl"
-            direction="column"
-            mt={4}
-            ml={isNotSmallerScreen ? 4 : 0}
-            bg="gray.100"
-            h="30vh"
-            w="30vh"
-            justify="flex-end"
-            _hover={{ bg: "green.400" }}
-          >
-            <Icon as={SiChakraui} p="4" w="24" h="24" color="black" />
-            <Text color="black" p="4" fontSize="xl" fontWeight="semibold">
-             Chakra UI
-            </Text>
-          </Flex>
-          <Flex
-            rounded="xl"
-            direction="column"
-            mt={4}
-            ml={isNotSmallerScreen ? 4 : 0}
-            bg="gray.100"
-            h="30vh"
-            w="30vh"
-            justify="flex-end"
-            _hover={{ bg: "green.400" }}
-          >
-            <Icon as={TbBrandVercel} p="4" w="24" h="24" color="black" />
-            <Text color="black" p="4" fontSize="xl" fontWeight="semibold">
-            Vercel
-            </Text>
-          </Flex>
-        </Grid>
-   </>
-  )
-}
+            HTML
+          </Text>
+        </Flex>
 
-export default Skills
+        <Flex
+          className="skills-card"
+          rounded="xl"
+          direction="column"
+          mt={4}
+          ml={isNotSmallerScreen ? 4 : 0}
+          bg="gray.100"
+          h={{ base: "20vh", lg: "25vh" }}
+          w={{ base: "20vh", lg: "25vh" }}
+          justify="flex-end"
+          _hover={{ bg: "green.400" }}
+          onClick={()=>window.open("https://nodejs.org/")}
+        >
+          <Icon
+            className="skills-card-img"
+            as={SiNodedotjs}
+            p="4"
+            w="20"
+            h="20"
+            color="black"
+          />
+          <Text
+            className="skills-card-name"
+            color="black"
+            p="4"
+            fontWeight="semibold"
+          >
+            NodeJs
+          </Text>
+        </Flex>
+        <Flex
+          className="skills-card"
+          rounded="xl"
+          direction="column"
+          mt={4}
+          ml={isNotSmallerScreen ? 4 : 0}
+          bg="gray.100"
+          h={{ base: "20vh", lg: "25vh" }}
+          w={{ base: "20vh", lg: "25vh" }}
+          justify="flex-end"
+          _hover={{ bg: "green.400" }}
+          onClick={()=>window.open("https://www.mongodb.com/")}
+        >
+          <Icon
+            className="skills-card-img"
+            as={SiMongodb}
+            p="4"
+            w="20"
+            h="20"
+            color="black"
+          />
+          <Text
+            className="skills-card-name"
+            color="black"
+            p="4"
+            fontWeight="semibold"
+          >
+            MongoDB
+          </Text>
+        </Flex>
+
+        <Flex
+          className="skills-card"
+          rounded="xl"
+          direction="column"
+          mt={4}
+          ml={isNotSmallerScreen ? 4 : 0}
+          bg="gray.100"
+          h={{ base: "20vh", lg: "25vh" }}
+          w={{ base: "20vh", lg: "25vh" }}
+          justify="flex-end"
+          _hover={{ bg: "green.400" }}
+          onClick={()=>window.open("https://mui.com/")}
+        >
+          <Icon
+            className="skills-card-img"
+            as={SiMaterialui}
+            p="4"
+            w="20"
+            h="20"
+            color="black"
+          />
+          <Text
+            className="skills-card-name"
+            color="black"
+            p="4"
+            fontWeight="semibold"
+          >
+            Material UI
+          </Text>
+        </Flex>
+        <Flex
+          className="skills-card"
+          rounded="xl"
+          direction="column"
+          mt={4}
+          ml={isNotSmallerScreen ? 4 : 0}
+          bg="gray.100"
+          h={{ base: "20vh", lg: "25vh" }}
+          w={{ base: "20vh", lg: "25vh" }}
+          justify="flex-end"
+          _hover={{ bg: "green.400" }}
+          onClick={()=>window.open("https://nextjs.org/")}
+        >
+          <Icon
+            className="skills-card-img"
+            as={TbBrandNextjs}
+            p="4"
+            w="20"
+            h="20"
+            color="black"
+          />
+          <Text
+            className="skills-card-name"
+            color="black"
+            p="4"
+            fontWeight="semibold"
+          >
+            NextJS
+          </Text>
+        </Flex>
+        <Flex
+          className="skills-card"
+          rounded="xl"
+          direction="column"
+          mt={4}
+          ml={isNotSmallerScreen ? 4 : 0}
+          bg="gray.100"
+          h={{ base: "20vh", lg: "25vh" }}
+          w={{ base: "20vh", lg: "25vh" }}
+          justify="flex-end"
+          _hover={{ bg: "green.400" }}
+          onClick={()=>window.open("https://chakra-ui.com/")}
+        >
+          <Icon
+            className="skills-card-img"
+            as={SiChakraui}
+            p="4"
+            w="20"
+            h="20"
+            color="black"
+          />
+          <Text
+            className="skills-card-name"
+            color="black"
+            p="4"
+            fontWeight="semibold"
+          >
+            Chakra UI
+          </Text>
+        </Flex>
+
+        <Flex
+          className="skills-card"
+          rounded="xl"
+          direction="column"
+          mt={4}
+          ml={isNotSmallerScreen ? 4 : 0}
+          bg="gray.100"
+          h={{ base: "20vh", lg: "25vh" }}
+          w={{ base: "20vh", lg: "25vh" }}
+          justify="flex-end"
+          _hover={{ bg: "green.400" }}
+          onClick={()=>window.open("https://expressjs.com/")}
+        >
+          <Icon
+            className="skills-card-img"
+            as={SiExpress}
+            p="4"
+            w="20"
+            h="20"
+            color="black"
+          />
+          <Text
+            className="skills-card-name"
+            color="black"
+            p="4"
+            fontWeight="semibold"
+          >
+            Express
+          </Text>
+        </Flex>
+      </Grid>
+    </Box>
+  );
+};
+
+export default Skills;
