@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.a4d1ff99.css",
-    "main.js": "/static/js/main.56fb6cbd.js",
+    "main.css": "/static/css/main.57ab8328.css",
+    "main.js": "/static/js/main.89586701.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/img.png": "/static/media/img.a36a051b25024538aff0.png",
     "static/media/Faisal-Mujtaba-Resume.pdf": "/static/media/Faisal-Mujtaba-Resume.19cfb262fb0418a40ba6.pdf",
     "index.html": "/index.html",
-    "main.a4d1ff99.css.map": "/static/css/main.a4d1ff99.css.map",
-    "main.56fb6cbd.js.map": "/static/js/main.56fb6cbd.js.map",
+    "main.57ab8328.css.map": "/static/css/main.57ab8328.css.map",
+    "main.89586701.js.map": "/static/js/main.89586701.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a4d1ff99.css",
-    "static/js/main.56fb6cbd.js"
+    "static/css/main.57ab8328.css",
+    "static/js/main.89586701.js"
   ]
 }
