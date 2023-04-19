@@ -1,4 +1,4 @@
-/* .stats{
+.stats{
     display: grid;
     grid-template-columns: "repeat(2,1fr";
     justify-content: center;
@@ -39,4 +39,4 @@
         flex-direction: column;
         gap: 20px;
     }
-} */
+}

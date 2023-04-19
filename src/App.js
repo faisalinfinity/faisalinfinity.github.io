@@ -82,10 +82,9 @@ function App() {
         fontFamily={"san-serif"}
         position={"absolute"}
         zIndex="-3"
-        p={5}
         bg={useColorModeValue("", "black")}
       >
-        <Flex mt={"60px"} w="100%">
+        <Flex mt={"70px"} w="100%">
           <Heading
             ref={aboutRef}
             id="home"

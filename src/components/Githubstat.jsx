@@ -1,4 +1,4 @@
-import { Center, Heading, Icon, Text } from "@chakra-ui/react";
+import { Box, Center, Heading, Icon, Text } from "@chakra-ui/react";
 import React from "react";
 import { SiGithub } from "react-icons/si";
 import Styles from "../styles/stats.module.css";
@@ -17,7 +17,7 @@ const Githubstat = () => {
  
  
   return (
-    <>
+    <Box width="90%" margin="auto">
       <br />
       <Center>
         {" "}
@@ -67,7 +67,7 @@ const Githubstat = () => {
       
        
       </div>
-    </>
+    </Box>
   );
 };
    

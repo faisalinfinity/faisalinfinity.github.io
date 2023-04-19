@@ -32,13 +32,6 @@ export default function Navbar({ sections }) {
     ref.current.scrollIntoView({ behavior: "smooth" });
   };
 
-  function downloadFile() {
-    let link = document.createElement("a");
-    link.download = "Faisal-Mujtaba-Resume.pdf";
-    link.href = faisal;
-    link.click();
-    link.remove();
-  }
 
   useEffect(() => {
     scrollref?.current.scrollIntoView({ behavior: "smooth" });
@@ -55,7 +48,7 @@ export default function Navbar({ sections }) {
           "linear(to-r, cyan.400, teal.100, purple.600)",
           "linear(to-r, cyan.400, blue.500, purple.600)"
         )}
-        px={4}
+         px={2}
       >
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
@@ -151,7 +144,7 @@ export default function Navbar({ sections }) {
                   window.open(
                     "https://drive.google.com/file/d/1w6skRez72kCV9W7hv4TTjIqgrYb9NASF/view?usp=share_link"
                   );
-                  downloadFile();
+                  // downloadFile();
                 }}
                 bg="none"
                 px={2}
@@ -165,7 +158,8 @@ export default function Navbar({ sections }) {
                 className="nav-link resume"
                 id="resume-button-1"
               >
-                Resume
+                <a id="resume-link-1" href={faisal} download={"Faisal-Mujtaba-Resume"}>   Resume </a>
+              
               </Button>
             </HStack>
           </HStack>

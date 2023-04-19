@@ -17,14 +17,6 @@ function Header() {
       "https://drive.google.com/file/d/1w6skRez72kCV9W7hv4TTjIqgrYb9NASF/view?usp=share_link";
     const fileId = driveUrl.match(/\/d\/(.+?)\/view/)[1];
     const pdfUrl = `https://drive.google.com/uc?id=1w6skRez72kCV9W7hv4TTjIqgrYb9NASF&export=download`;
-    const a = document.createElement("a");
-    a.id = "resume-link-2";
-    a.href = driveUrl;
-    a.target = "_blank";
-    a.click();
-    setTimeout(() => {
-      window.location.href = pdfUrl;
-    }, 1000);
   }
 
   // const resumedown2 = () => {
@@ -43,6 +35,7 @@ function Header() {
         spacing="200px"
         p={isNotSmallerScreen ? "32" : "0"}
         alignSelf="flex-start"
+        ml="20px"
       >
         <Box mt={isNotSmallerScreen ? "0" : 16} align="flex-start">
           <Text fontSize="5xl" fontWeight="semibold" fontFamily={"san-serif"}>
@@ -59,10 +52,13 @@ function Header() {
           </Text>
           <Text
             fontFamily={"san-serif"}
+            fontSize={"xl"}
+            width={"90%"}
             id="user-detail-intro"
             color={isDark ? "gray.200" : "gray.500"}
+            flexWrap={"wrap"}
           >
-            About :- Dedicated and efficient full stack developer with over 1000
+            About :- Dedicated and efficient full stack developer with over 1200
             hours of hands-on coding experience in tech application and
             presentation layers, as well as tech databases. Proficient in
             building and optimizing user-focused tech websites and applications
@@ -71,18 +67,21 @@ function Header() {
             HTML, CSS, and Express framework.
           </Text>
           
-          <button
-            id="resume-button-2"
-            onClick={() =>
-              (window.location.href =
-                "https://drive.google.com/uc?export=download&id=1w6skRez72kCV9W7hv4TTjIqgrYb9NASF")
-            }
-            // mt={8}
-            // colorScheme="blue"
-            // bgGradient="linear(to-r, cyan.400, blue.500, purple.600)"
-          >
-            RESUME
-          </button>
+          <Button
+          bgGradient="linear(to-r, cyan.400, blue.500, purple.600)"
+                onClick={() => {
+                  window.open(
+                    "https://drive.google.com/file/d/1w6skRez72kCV9W7hv4TTjIqgrYb9NASF/view?usp=share_link"
+                  );
+                  downloadFile();
+                }}
+                mt="5px"
+                rounded={"md"}
+                id="resume-button-2"
+              >
+                <a id="resume-link-2" href={faisal} download={"Faisal-Mujtaba-Resume"}>   Resume </a>
+              
+              </Button>
         </Box>
         <Image
           className="home-img"
