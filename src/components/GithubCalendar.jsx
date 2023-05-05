@@ -13,7 +13,7 @@ function GithubCal() {
     grade0: "#19c9ea",
   };
   return (
-    <Box width={"90%"} margin={"auto"}>
+    <Box  width={"90%"} margin={"auto"}>
       <Center>
         <Heading>GitHub Calendar</Heading>
       </Center>

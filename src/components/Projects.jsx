@@ -33,7 +33,8 @@ import {
 } from "react-icons/si";
 import { ScrollContext } from "../Context/ScrollContext";
 import "../styles/project.css";
-
+export const bs =
+  "0px 8px 16px -8px rgba(50, 50, 93, 0.25), 0px 16px 32px -16px rgba(0, 0, 0, 0.3), 0px -2px 6px 0px rgba(10, 37, 64, 0.35) inset, 0px -2px 8px 0px rgba(255, 255, 255, 0.5) inset";
 const testimonials = [
   {
     role: "Healthistic- a great place for people serious about health and fitness. We're a young start-up of around 400 people that work for your needs in fitness and well-being",
@@ -94,6 +95,26 @@ const testimonials = [
     netlify: "https://productify.vercel.app/",
     light:
       "https://res.cloudinary.com/dq674z2lp/image/upload/v1680538611/mobile_1_gi9c0h.png",
+  },
+  {
+    role: "This is an order matching system web application that allows users to place orders, view pending orders, and see completed orders with matched prices with dynamic chart built within 2-Days",
+    content: "Order Matching System like Stock Market (Full Stack App)",
+    l1: "Mongodb",
+    l2: "Express",
+    l3: "React",
+    l4: "NodeJS",
+    l5: "Chakra",
+    l6: "Bcrypt",
+    Icon1: SiMongodb,
+    Icon3: SiNodedotjs,
+    Icon4: SiReact,
+    Icon2: SiExpress,
+    Icon5: SiChakraui,
+    url: "https://res.cloudinary.com/dq674z2lp/image/upload/v1682970518/mobile_10_xkgsec.png",
+    github: "https://github.com/faisalinfinity/cuddly-smoke-9747",
+    netlify: "https://frontend-snowy-eta.vercel.app/",
+    light:
+      "https://res.cloudinary.com/dq674z2lp/image/upload/v1682970518/desktop-1_valny0.png",
   },
   {
     l1: "React",
@@ -205,7 +226,7 @@ function TestimonialCard(props) {
   return (
     <Flex
       className="project-card"
-      boxShadow={"lg"}
+      boxShadow={bs}
       maxW={"640px"}
       direction={{ base: "column-reverse", md: "row" }}
       width={"full"}
@@ -240,6 +261,7 @@ function TestimonialCard(props) {
         left: 0,
         backgroundImage: useColorModeValue(backgrounds[index % 4], ""),
       }}
+      borderRadius={"25px"}
     >
       <Flex
         direction={"column"}
@@ -362,6 +384,7 @@ function TestimonialCard(props) {
       </Flex>
       <Image
         w={"50%"}
+        maxH={"46%"}
         h="50%"
         src={useColorModeValue(light, url)}
         alt="d"

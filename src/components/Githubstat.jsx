@@ -3,6 +3,7 @@ import React from "react";
 import { SiGithub } from "react-icons/si";
 import Styles from "../styles/stats.module.css";
 import GitHubCalendar from "github-calendar"
+import { bs } from "./Projects";
 
 // https://github-readme-streak-stats.herokuapp.com?user=
 // https://streak-stats.demolab.com?user=faisalinfinity&_border=true&theme=dark&hide_border=true&theme=react
@@ -36,7 +37,7 @@ const Githubstat = () => {
           />
         </div>
 
-        <div align="center" className={Styles.stats2}>
+        <div  align="center" className={Styles.stats2}>
           <img
           id="github-stats-card"
             style={{ display: "block", margin: "auto" }}

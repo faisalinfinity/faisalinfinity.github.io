@@ -40,9 +40,8 @@ const Skills = ({ skillsRef }) => {
         <Text>Skills</Text>
       </Heading>
       <Grid
-        className="skills-card"
+        // className="skills-card"
         p={"0 20px 0 20px"}
-       
         templateColumns={{
           base: "repeat(2,1fr)",
           md: "repeat(3,1fr)",
@@ -61,7 +60,7 @@ const Skills = ({ skillsRef }) => {
           h={{ base: "20vh", lg: "25vh" }}
           w={{ base: "20vh", lg: "25vh" }}
           justify="flex-end"
-          onClick={()=>window.open("https://reactjs.org/")}
+          onClick={() => window.open("https://reactjs.org/")}
         >
           <Icon
             color="white"
@@ -91,7 +90,7 @@ const Skills = ({ skillsRef }) => {
           w={{ base: "20vh", lg: "25vh" }}
           justify="flex-end"
           _hover={{ bg: "teal.400" }}
-          onClick={()=>window.open("https://redux.js.org/")}
+          onClick={() => window.open("https://redux.js.org/")}
         >
           <Icon
             className="skills-card-img"
@@ -121,7 +120,11 @@ const Skills = ({ skillsRef }) => {
           w={{ base: "20vh", lg: "25vh" }}
           justify="flex-end"
           _hover={{ bg: "green.400" }}
-          onClick={()=>window.open("https://developer.mozilla.org/en-US/docs/Web/JavaScript")}
+          onClick={() =>
+            window.open(
+              "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+            )
+          }
         >
           <Icon
             className="skills-card-img"
@@ -151,7 +154,7 @@ const Skills = ({ skillsRef }) => {
           w={{ base: "20vh", lg: "25vh" }}
           justify="flex-end"
           _hover={{ bg: "green.400" }}
-          onClick={()=>window.open("https://www.typescriptlang.org/")}
+          onClick={() => window.open("https://www.typescriptlang.org/")}
         >
           <Icon
             className="skills-card-img"
@@ -181,7 +184,9 @@ const Skills = ({ skillsRef }) => {
           w={{ base: "20vh", lg: "25vh" }}
           justify="flex-end"
           _hover={{ bg: "green.400" }}
-          onClick={()=>window.open("https://developer.mozilla.org/en-US/docs/Web/CSS")}
+          onClick={() =>
+            window.open("https://developer.mozilla.org/en-US/docs/Web/CSS")
+          }
         >
           <Icon
             className="skills-card-img"
@@ -211,7 +216,9 @@ const Skills = ({ skillsRef }) => {
           w={{ base: "20vh", lg: "25vh" }}
           justify="flex-end"
           _hover={{ bg: "green.400" }}
-          onClick={()=>window.open("https://developer.mozilla.org/en-US/docs/Web/HTML")}
+          onClick={() =>
+            window.open("https://developer.mozilla.org/en-US/docs/Web/HTML")
+          }
         >
           <Icon
             className="skills-card-img"
@@ -242,7 +249,7 @@ const Skills = ({ skillsRef }) => {
           w={{ base: "20vh", lg: "25vh" }}
           justify="flex-end"
           _hover={{ bg: "green.400" }}
-          onClick={()=>window.open("https://nodejs.org/")}
+          onClick={() => window.open("https://nodejs.org/")}
         >
           <Icon
             className="skills-card-img"
@@ -272,7 +279,7 @@ const Skills = ({ skillsRef }) => {
           w={{ base: "20vh", lg: "25vh" }}
           justify="flex-end"
           _hover={{ bg: "green.400" }}
-          onClick={()=>window.open("https://www.mongodb.com/")}
+          onClick={() => window.open("https://www.mongodb.com/")}
         >
           <Icon
             className="skills-card-img"
@@ -303,7 +310,7 @@ const Skills = ({ skillsRef }) => {
           w={{ base: "20vh", lg: "25vh" }}
           justify="flex-end"
           _hover={{ bg: "green.400" }}
-          onClick={()=>window.open("https://mui.com/")}
+          onClick={() => window.open("https://mui.com/")}
         >
           <Icon
             className="skills-card-img"
@@ -333,7 +340,7 @@ const Skills = ({ skillsRef }) => {
           w={{ base: "20vh", lg: "25vh" }}
           justify="flex-end"
           _hover={{ bg: "green.400" }}
-          onClick={()=>window.open("https://nextjs.org/")}
+          onClick={() => window.open("https://nextjs.org/")}
         >
           <Icon
             className="skills-card-img"
@@ -363,7 +370,7 @@ const Skills = ({ skillsRef }) => {
           w={{ base: "20vh", lg: "25vh" }}
           justify="flex-end"
           _hover={{ bg: "green.400" }}
-          onClick={()=>window.open("https://chakra-ui.com/")}
+          onClick={() => window.open("https://chakra-ui.com/")}
         >
           <Icon
             className="skills-card-img"
@@ -394,7 +401,7 @@ const Skills = ({ skillsRef }) => {
           w={{ base: "20vh", lg: "25vh" }}
           justify="flex-end"
           _hover={{ bg: "green.400" }}
-          onClick={()=>window.open("https://expressjs.com/")}
+          onClick={() => window.open("https://expressjs.com/")}
         >
           <Icon
             className="skills-card-img"

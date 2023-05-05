@@ -62,6 +62,7 @@ const Toolset = ({ skillsRef }) => {
       >
       
         <Flex
+           className="skills-card"
          
           rounded="xl"
           direction="column"
@@ -94,6 +95,7 @@ const Toolset = ({ skillsRef }) => {
       
        
         <Flex
+           className="skills-card"
          
           rounded="xl"
           direction="column"
@@ -127,6 +129,7 @@ const Toolset = ({ skillsRef }) => {
        
       
         <Flex
+           className="skills-card"
          
           rounded="xl"
           direction="column"
@@ -157,6 +160,7 @@ const Toolset = ({ skillsRef }) => {
           </Text>
         </Flex>
         <Flex
+           className="skills-card"
          
           rounded="xl"
           direction="column"
@@ -187,6 +191,7 @@ const Toolset = ({ skillsRef }) => {
           </Text>
         </Flex>
         <Flex
+           className="skills-card"
          
           rounded="xl"
           direction="column"
@@ -217,6 +222,7 @@ const Toolset = ({ skillsRef }) => {
           </Text>
         </Flex>
         <Flex
+           className="skills-card"
          
          rounded="xl"
          direction="column"
@@ -247,6 +253,7 @@ const Toolset = ({ skillsRef }) => {
          </Text>
        </Flex>
        <Flex
+          className="skills-card"
          
          rounded="xl"
          direction="column"
@@ -277,6 +284,7 @@ const Toolset = ({ skillsRef }) => {
          </Text>
        </Flex>
        <Flex
+          className="skills-card"
          
          rounded="xl"
          direction="column"
@@ -307,6 +315,7 @@ const Toolset = ({ skillsRef }) => {
          </Text>
        </Flex>
        <Flex
+          className="skills-card"
          
          rounded="xl"
          direction="column"
@@ -337,6 +346,7 @@ const Toolset = ({ skillsRef }) => {
          </Text>
        </Flex>
        <Flex
+          className="skills-card"
          
          rounded="xl"
          direction="column"
