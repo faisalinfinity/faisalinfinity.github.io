@@ -111,8 +111,8 @@ const testimonials = [
     Icon2: SiExpress,
     Icon5: SiChakraui,
     url: "https://res.cloudinary.com/dq674z2lp/image/upload/v1682970518/mobile_10_xkgsec.png",
-    github: "https://github.com/faisalinfinity/cuddly-smoke-9747",
-    netlify: "https://frontend-snowy-eta.vercel.app/",
+    github: "https://github.com/faisalinfinity/order-matching-system",
+    netlify: "https://order-matching-system-omega.vercel.app",
     light:
       "https://res.cloudinary.com/dq674z2lp/image/upload/v1682970518/desktop-1_valny0.png",
   },

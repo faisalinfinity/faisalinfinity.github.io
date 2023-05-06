@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import "./App.css";
 import Header from "./components/Header";
+import axios from "axios";
 
 import Profile from "./components/Profile";
 import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
@@ -20,17 +21,18 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 
 import Githubstat from "./components/Githubstat";
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { ScrollContext } from "./Context/ScrollContext";
 
 import Contact from "./components/Contact";
 import GithubCal from "./components/GithubCalendar";
 
-import { MdCopyright } from "react-icons/md";
+import { MdCopyright, MdPeople } from "react-icons/md";
 import { SiAndroid, SiApple, SiWindows } from "react-icons/si";
 import Toolset from "./components/Toolset";
 function App() {
-  const { scrollref } = useContext(ScrollContext);
+  const { scrollref } = useContext(ScrollContext);;
+  const [data, setData] = useState({});
 
   const aboutRef = useRef(null);
   const projectRef = useRef(null);
@@ -43,12 +45,11 @@ function App() {
 
   var browser = navigator.userAgent;
   console.log("Browser: " + browser);
-  
 
   let device;
   let icon;
   if (navigator.userAgent.match(/iPhone/i)) {
-    console.log(device = "Iphone");
+    device = "Iphone";
     icon = SiApple;
   } else if (navigator.userAgent.match(/Android/i)) {
     device = "Android";
@@ -72,6 +73,16 @@ function App() {
     icon = SiApple;
   }
 
+  useEffect(() => {
+    axios.get("https://geolocation-db.com/json/").then((res) =>
+      axios
+        .post("https://indigo-squirrel-kit.cyclic.app/portfolio", {
+          ip: res.data.IPv4,
+          country_name: res.data.country_name,
+        })
+        .then((r) => setData(r.data))
+    );
+  }, []);
   return (
     <Box>
       <Navbar
@@ -100,7 +111,24 @@ function App() {
             alignItems={"center"}
             gap="5px"
           >
-            <Icon as={icon}></Icon> You are viewing on {device}
+            <Box display="flex" gap="5px" flexDirection={"column"}>
+              <Box
+                display="flex"
+                justifyContent={"center"}
+                alignItems={"center"}
+                gap="5px"
+              >
+                <Icon as={icon}></Icon> <Text>You are viewing on {device}</Text>
+              </Box>
+              <Box
+                display="flex"
+                justifyContent={"center"}
+                alignItems={"center"}
+                gap="5px"
+              >
+                <Icon as={MdPeople}></Icon> Visitors {data.length}
+              </Box>
+            </Box>
           </Heading>
 
           <Spacer></Spacer>
@@ -133,12 +161,12 @@ function App() {
 
         <Header></Header>
         <Profile></Profile>
-        
+
         <Spacer></Spacer>
         <Skills skillsRef={skillsRef} />
-       <br/>
-       <br/>
-       <br/>
+        <br />
+        <br />
+        <br />
         <Spacer></Spacer>
         <Toolset />
         <Projects projectRef={projectRef} />
