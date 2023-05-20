@@ -19,6 +19,7 @@ import {
   SiMongodb,
   SiNodedotjs,
   SiRedux,
+  SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
 import { IoLogoCss3 } from "react-icons/io";
@@ -94,7 +95,7 @@ const Skills = ({ skillsRef }) => {
         >
           <Icon
             className="skills-card-img"
-            color="black"
+            color="#764abc"
             p="4"
             as={SiRedux}
             w="20"
@@ -132,7 +133,7 @@ const Skills = ({ skillsRef }) => {
             p="4"
             w="20"
             h="20"
-            color="black"
+            color="#efd81d"
           />
           <Text
             className="skills-card-name"
@@ -162,7 +163,7 @@ const Skills = ({ skillsRef }) => {
             p="4"
             w="20"
             h="20"
-            color="black"
+            color="#3178c6"
           />
           <Text
             className="skills-card-name"
@@ -194,7 +195,7 @@ const Skills = ({ skillsRef }) => {
             p="4"
             w="20"
             h="20"
-            color="black"
+            color="#254bdd"
           />
           <Text
             className="skills-card-name"
@@ -226,7 +227,7 @@ const Skills = ({ skillsRef }) => {
             p="4"
             w="20"
             h="20"
-            color="black"
+            color="#dd4b25"
           />
           <Text
             className="skills-card-name"
@@ -257,7 +258,7 @@ const Skills = ({ skillsRef }) => {
             p="4"
             w="20"
             h="20"
-            color="black"
+            color="#70a861"
           />
           <Text
             className="skills-card-name"
@@ -287,7 +288,7 @@ const Skills = ({ skillsRef }) => {
             p="4"
             w="20"
             h="20"
-            color="black"
+            color="#00ee65"
           />
           <Text
             className="skills-card-name"
@@ -318,7 +319,7 @@ const Skills = ({ skillsRef }) => {
             p="4"
             w="20"
             h="20"
-            color="black"
+            color="#007bf7"
           />
           <Text
             className="skills-card-name"
@@ -378,7 +379,8 @@ const Skills = ({ skillsRef }) => {
             p="4"
             w="20"
             h="20"
-            color="black"
+            color="
+            #46c8c1"
           />
           <Text
             className="skills-card-name"
@@ -418,6 +420,38 @@ const Skills = ({ skillsRef }) => {
             fontWeight="semibold"
           >
             Express
+          </Text>
+        </Flex>
+       
+        <Flex
+          className="skills-card"
+          rounded="xl"
+          direction="column"
+          mt={4}
+          ml={isNotSmallerScreen ? 4 : 0}
+          bg="gray.100"
+          h={{ base: "20vh", lg: "25vh" }}
+          w={{ base: "20vh", lg: "25vh" }}
+          justify="flex-end"
+          _hover={{ bg: "green.400" }}
+          onClick={() => window.open("https://expressjs.com/")}
+        >
+          <Icon
+            className="skills-card-img"
+            as={SiTailwindcss}
+            p="4"
+            w="20"
+            h="20"
+            color="
+            #38bdf8"
+          />
+          <Text
+            className="skills-card-name"
+            color="black"
+            p="4"
+            fontWeight="semibold"
+          >
+          Tailwind CSS
           </Text>
         </Flex>
       </Grid>

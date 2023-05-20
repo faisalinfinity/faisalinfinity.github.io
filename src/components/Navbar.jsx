@@ -30,6 +30,7 @@ export default function Navbar({ sections }) {
   const handleClick = (ref) => {
     setscroll(ref);
     ref.current.scrollIntoView({ behavior: "smooth" });
+    onClose()
   };
 
 

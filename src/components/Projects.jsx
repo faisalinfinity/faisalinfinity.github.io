@@ -236,7 +236,7 @@ function TestimonialCard(props) {
       alignItems={{ base: "center" }}
       gap={{ base: "10px" }}
       position={"relative"}
-      bg={useColorModeValue("white", "gray.800")}
+      bg={useColorModeValue("#fff", "black")}
       _after={{
         content: '""',
         position: "absolute",
@@ -326,7 +326,7 @@ function TestimonialCard(props) {
             <Icon
               bgGradient={useColorModeValue(
                 "none",
-                "linear(to-r, cyan.400, blue.500, purple.600)"
+                ""
               )}
               as={Icon2}
               fontSize={"30px"}
@@ -337,7 +337,7 @@ function TestimonialCard(props) {
             <Icon
               bgGradient={useColorModeValue(
                 "none",
-                "linear(to-r, cyan.400, blue.500, purple.600)"
+                ""
               )}
               as={Icon3}
               fontSize={"30px"}
@@ -349,7 +349,7 @@ function TestimonialCard(props) {
             <Icon
               bgGradient={useColorModeValue(
                 "none",
-                "linear(to-r, cyan.400, blue.500, purple.600)"
+                ""
               )}
               as={Icon1}
               fontSize={"30px"}
@@ -361,7 +361,7 @@ function TestimonialCard(props) {
             <Icon
               bgGradient={useColorModeValue(
                 "none",
-                "linear(to-r, cyan.400, blue.500, purple.600)"
+                ""
               )}
               as={Icon4}
               fontSize={"30px"}
@@ -373,7 +373,7 @@ function TestimonialCard(props) {
             <Icon
               bgGradient={useColorModeValue(
                 "none",
-                "linear(to-r, cyan.400, blue.500, purple.600)"
+                ""
               )}
               as={Icon5}
               fontSize={"30px"}

@@ -31,7 +31,7 @@ import { MdCopyright, MdPeople } from "react-icons/md";
 import { SiAndroid, SiApple, SiWindows } from "react-icons/si";
 import Toolset from "./components/Toolset";
 function App() {
-  const { scrollref } = useContext(ScrollContext);;
+  const { scrollref } = useContext(ScrollContext);
   const [data, setData] = useState({});
 
   const aboutRef = useRef(null);
@@ -95,7 +95,7 @@ function App() {
         zIndex="-3"
         bg={useColorModeValue("", "black")}
       >
-        <Flex mt={"70px"} w="100%">
+        <Flex m="auto"  mt={"70px"} w="90%">
           <Heading
             ref={aboutRef}
             id="home"
@@ -120,21 +120,22 @@ function App() {
               >
                 <Icon as={icon}></Icon> <Text>You are viewing on {device}</Text>
               </Box>
-              <Box
-                display="flex"
-                justifyContent={"center"}
-                alignItems={"center"}
-                gap="5px"
-              >
-                <Icon as={MdPeople}></Icon> Visitors {data.length}
-              </Box>
             </Box>
           </Heading>
 
           <Spacer></Spacer>
-
-          <IconButton
-            position={"inherit"}
+          <Box
+            display="flex"
+            justifyContent={"center"}
+            alignItems={"center"}
+            gap="5px"
+            fontWeight={"bold"}
+          >
+            <Icon as={MdPeople}></Icon>Unique Visitors {data.length}
+          </Box>
+          {/* <IconButton
+          position={"relative"}
+            zIndex={"22"}
             icon={<FaLinkedin />}
             isRound="true"
             onClick={() =>
@@ -144,19 +145,21 @@ function App() {
             }
           ></IconButton>
           <IconButton
-            position={"inherit"}
+        position={"relative"}
+            zIndex={"22"}
             ml={2}
             icon={<FaInstagram />}
             isRound="true"
             onClick={() => window.open("https://www.instagram.com/mj_faisal_/")}
           ></IconButton>
           <IconButton
-            position={"inherit"}
+               position={"relative"}
+            zIndex={22}
             ml={2}
             icon={<FaGithub />}
             isRound="true"
             onClick={() => window.open("https://github.com/faisalinfinity")}
-          ></IconButton>
+          ></IconButton> */}
         </Flex>
 
         <Header></Header>
