@@ -42,7 +42,7 @@ const Githubstat = () => {
           id="github-stats-card"
             style={{ display: "block", margin: "auto" }}
             alt="streak"
-            src="https://github-readme-stats.vercel.app/api?username=faisalinfinity&theme=react&border_radius=4.6&hide_border=true&layout=compact&show_icons=true"
+            src="https://github-readme-stats-sigma-five.vercel.app/api?username=faisalinfinity&theme=react&border_radius=4.6&hide_border=true&layout=compact&show_icons=true"
             // style={{ width: "50%" }}
           />
 
@@ -50,7 +50,7 @@ const Githubstat = () => {
           id="github-top-langs"
             style={{ display: "block", margin: "auto" }}
             alt="streak"
-            src="https://github-readme-stats.vercel.app/api/top-langs/?username=faisalinfinity&theme=react&border_radius=4.6&show_icons=true&count_private=true&hide_border=true&show_icons=true"
+            src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=faisalinfinity&theme=react&border_radius=4.6&show_icons=true&count_private=true&hide_border=true&show_icons=true"
             // style={{ width: "50%" }}
           />
         </div>
@@ -62,7 +62,7 @@ const Githubstat = () => {
           <img
             style={{ display: "block", margin: "auto", width: "80%" }}
             alt="Faisal Activity Graph"
-            src="https://github-readme-activity-graph.cyclic.app/graph?username=faisalinfinity&theme=react-dark&hide_border=true"
+            src="https://github-readme-activity-graph.vercel.app/graph?username=faisalinfinity&bg_color=000000&color=1dc2d7&line=42fffc&point=faffff&area=true&hide_border=true"
           />
         </div>
       
