@@ -65,6 +65,8 @@ export default function Navbar({ sections }) {
               onClick={() => handleClick(sections.aboutRef)}
               bg="none"
               leftIcon={<ImEarth />}
+              fontWeight={"bold"}
+             fontFamily={"san-serif"}
               className="nav-link home"
             >
               {" "}
@@ -88,6 +90,8 @@ export default function Navbar({ sections }) {
                   color: "white",
                 }}
                 className="nav-link about"
+                fontWeight={"bold"}
+                fontFamily={"san-serif"}
               >
                 About Me
               </Button>
@@ -104,6 +108,8 @@ export default function Navbar({ sections }) {
                   color: "white",
                 }}
                 className="nav-link skills"
+                fontWeight={"bold"}
+                fontFamily={"san-serif"}
               >
                 Skills
               </Button>
@@ -120,6 +126,8 @@ export default function Navbar({ sections }) {
                   color: "white",
                 }}
                 className="nav-link projects"
+                fontWeight={"bold"}
+                fontFamily={"san-serif"}
               >
                 Projects
               </Button>
@@ -136,6 +144,8 @@ export default function Navbar({ sections }) {
                   color: "white",
                 }}
                 className="nav-link contact"
+                fontWeight={"bold"}
+                fontFamily={"san-serif"}
               >
                 Contact
               </Button>
@@ -158,6 +168,8 @@ export default function Navbar({ sections }) {
                 }}
                 className="nav-link resume"
                 id="resume-button-1"
+                fontWeight={"bold"}
+                fontFamily={"san-serif"}
               >
                 <a id="resume-link-1" href={faisal} download={"Faisal-Mujtaba-Resume"}>   Resume </a>
               

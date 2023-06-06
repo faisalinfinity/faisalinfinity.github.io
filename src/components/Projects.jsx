@@ -237,6 +237,7 @@ function TestimonialCard(props) {
       gap={{ base: "10px" }}
       position={"relative"}
       bg={useColorModeValue("#fff", "black")}
+      border={useColorModeValue("", "2px solid teal")}
       _after={{
         content: '""',
         position: "absolute",
