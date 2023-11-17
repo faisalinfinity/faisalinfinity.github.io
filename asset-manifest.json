@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.abe7832c.css",
-    "main.js": "/static/js/main.502fe5c9.js",
-    "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
+    "main.css": "/static/css/main.2c66d5f6.css",
+    "main.js": "/static/js/main.b3595d5b.js",
+    "static/js/787.7da95b79.chunk.js": "/static/js/787.7da95b79.chunk.js",
     "static/media/img.png": "/static/media/img.a36a051b25024538aff0.png",
-    "static/media/Faisal-Mujtaba-Resume.pdf": "/static/media/Faisal-Mujtaba-Resume.19cfb262fb0418a40ba6.pdf",
+    "static/media/Faisal-Mujtaba-Resume.pdf": "/static/media/Faisal-Mujtaba-Resume.1b2d6b2e80b5a9fd3ff0.pdf",
     "index.html": "/index.html",
-    "main.abe7832c.css.map": "/static/css/main.abe7832c.css.map",
-    "main.502fe5c9.js.map": "/static/js/main.502fe5c9.js.map",
-    "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
+    "main.2c66d5f6.css.map": "/static/css/main.2c66d5f6.css.map",
+    "main.b3595d5b.js.map": "/static/js/main.b3595d5b.js.map",
+    "787.7da95b79.chunk.js.map": "/static/js/787.7da95b79.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.abe7832c.css",
-    "static/js/main.502fe5c9.js"
+    "static/css/main.2c66d5f6.css",
+    "static/js/main.b3595d5b.js"
   ]
 }
