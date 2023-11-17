@@ -4,12 +4,15 @@ import { Image } from "@chakra-ui/image";
 import { Stack, Flex, Box, Text } from "@chakra-ui/layout";
 import { useMediaQuery } from "@chakra-ui/media-query";
 import faisal from "./Faisal-Mujtaba-Resume.pdf";
-import React from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 function Header() {
   const { colorMode } = useColorMode();
   const isDark = colorMode === "dark";
+
+  const Ref1 = useRef();
+  const Ref2 = useRef();
 
   const [isNotSmallerScreen] = useMediaQuery("(min-width:600px)");
   function downloadFile() {
@@ -25,6 +28,38 @@ function Header() {
   //       "_blank"
   //     );
   // };
+  const Back = () => {
+    return (
+      <div className="back" ref={Ref2}>
+        <p>
+          Some sample text to demonstrate how these cards will work, including
+          how they truncate long sentences. This section displays the
+          full-length blog post.
+        </p>
+        <p>
+          Bloggity bloggity bloggity blog. This would be the full text of the
+          abbreviated blog post.
+        </p>
+      </div>
+    );
+  };
+
+  const [flipped, setFlipped] = useState(false);
+
+  const flip = () => {
+    setFlipped(!flipped);
+    if (flipped) {
+      if (Ref1.current) {
+        Ref1.current.style.display = "none";
+        Ref2.current.style.display = "block";
+      }
+    } else {
+      if (Ref1.current) {
+        Ref1.current.style.display = "block";
+        Ref2.current.style.display = "none";
+      }
+    }
+  };
 
   return (
     <Stack>
@@ -58,42 +93,58 @@ function Header() {
             color={isDark ? "gray.200" : "gray.500"}
             flexWrap={"wrap"}
           >
-            About :- Dedicated and efficient full stack developer with over 1200
-            hours of hands-on coding experience in tech application and
-            presentation layers, as well as tech databases. Proficient in
-            building and optimizing user-focused tech websites and applications
-            using MERN stack, JavaScript, MongoDB, and No SQL. Expertise in both
-            frontend and backend development, with solid knowledge of NodeJS,
-            HTML, CSS, and Express framework.
+            I've gained valuable experience developing multiple MERN stack
+            projects. From creating robust APIs with Express.js and Node.js to
+            building dynamic user interfaces with React, these projects have
+            enhanced my skills in end-to-end web development. Collaborating with
+            cross-functional teams, I've learned to adapt quickly and deliver
+            high-quality solutions
           </Text>
-          
+
           <Button
-          bgGradient="linear(to-r, cyan.400, blue.500, purple.600)"
-                onClick={() => {
-                  window.open(
-                    "https://drive.google.com/file/d/1w6skRez72kCV9W7hv4TTjIqgrYb9NASF/view?usp=share_link"
-                  );
-                  downloadFile();
-                }}
-                mt="5px"
-                rounded={"md"}
-                id="resume-button-2"
-              >
-                <a id="resume-link-2" href={faisal} download={"Faisal-Mujtaba-Resume"}>   Resume </a>
-              
-              </Button>
+            bgGradient="linear(to-r, cyan.400, blue.500, purple.600)"
+            onClick={() => {
+              window.open(
+                "https://drive.google.com/file/d/1w6skRez72kCV9W7hv4TTjIqgrYb9NASF/view?usp=share_link"
+              );
+              downloadFile();
+            }}
+            mt="5px"
+            rounded={"md"}
+            id="resume-button-2"
+          >
+            <a
+              id="resume-link-2"
+              href={faisal}
+              download={"Faisal-Mujtaba-Resume"}
+            >
+              {" "}
+              Resume{" "}
+            </a>
+          </Button>
         </Box>
-        <Image
-          className="home-img"
-          alignSelf="center"
-          mt={isNotSmallerScreen ? "0" : "12"}
-          mb={isNotSmallerScreen ? "0" : "12"}
-          borderRadius="full"
-          backgroundColor="transparent"
-          boxShadow="lg"
-          boxSize="250px"
-          src="https://avatars.githubusercontent.com/u/112964959?v=4"
-        />
+        <div className="page-container">
+          <div
+           
+            className={`card-container ${flipped ? "flipped" : ""}`}
+          >
+            <div className="front" ref={Ref1}>
+              <Box className="image-container">
+                <Image
+                  className="home-img"
+                  alignSelf="center"
+                  mt={isNotSmallerScreen ? "0" : "12"}
+                  mb={isNotSmallerScreen ? "0" : "12"}
+                  borderRadius="full"
+                  backgroundColor="transparent"
+                  boxShadow="lg"
+                  src="https://avatars.githubusercontent.com/u/112964959?v=4"
+                />
+              </Box>
+            </div>
+            <Back />
+          </div>
+        </div>
       </Flex>
     </Stack>
   );

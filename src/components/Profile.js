@@ -24,10 +24,10 @@ function Profile() {
             fontWeight="extrabold"
             size="4xl"
           >
-            1200+
+            1.5+
           </Heading>
           <Text fontSize="2xl" color="gray.400">
-            hours of focused coding, endless possibilities - my portfolio of
+            years of focused coding, endless possibilities - my portfolio of
             algorithmic accomplishments and growth.
           </Text>
         </Box>
@@ -45,7 +45,7 @@ function Profile() {
             fontWeight="extrabold"
             size="4xl"
           >
-            700+ DSA <Icon as={SiVisualstudiocode}></Icon>
+            900+ DSA <Icon as={SiVisualstudiocode}></Icon>
           </Heading>
           <Text fontSize="2xl" color="gray.400">
             problems solved and still hungry for more - my portfolio of
@@ -64,7 +64,7 @@ function Profile() {
                 <Image
                   bgColor={"white"}
                   w={"50px"}
-                  src="https://masaischool.com/img/navbar/logo.svg"
+                  src="https://students.masaischool.com/static/media/masai-logo.e5c8801d4f26d2da036ec9e4b93cb202.svg"
                 ></Image>
                 <Link   _hover={{ color: "teal" }}  fontSize={"18px"} href="https://drive.google.com/file/d/1XFXH-AOsaCdeJngyHJz1CXRE6pHSsrgj/view?usp=share_link">OJ</Link>
               </Text>

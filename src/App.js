@@ -30,6 +30,7 @@ import GithubCal from "./components/GithubCalendar";
 import { MdCopyright, MdPeople } from "react-icons/md";
 import { SiAndroid, SiApple, SiWindows } from "react-icons/si";
 import Toolset from "./components/Toolset";
+import Experience from "./components/Experience";
 function App() {
   const { scrollref } = useContext(ScrollContext);
   const [data, setData] = useState({});
@@ -38,6 +39,7 @@ function App() {
   const projectRef = useRef(null);
   const contactRef = useRef(null);
   const skillsRef = useRef(null);
+  const expRef=useRef(null)
 
   useEffect(() => {
     scrollref?.current.scrollIntoView({ behavior: "smooth" });
@@ -87,7 +89,7 @@ function App() {
     <Box>
       <Navbar
         fontFamily={"san-serif"}
-        sections={{ aboutRef, projectRef, skillsRef, contactRef }}
+        sections={{ aboutRef, projectRef, skillsRef, contactRef,expRef }}
       />
       <VStack
         fontFamily={"san-serif"}
@@ -165,6 +167,8 @@ function App() {
         <Header></Header>
         <Profile></Profile>
 
+        <Spacer></Spacer>
+        <Experience expRef={expRef}/>
         <Spacer></Spacer>
         <Skills skillsRef={skillsRef} />
         <br />

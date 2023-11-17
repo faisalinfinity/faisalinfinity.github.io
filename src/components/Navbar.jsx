@@ -98,6 +98,24 @@ export default function Navbar({ sections }) {
               <Button
                 leftIcon={<MdMilitaryTech />}
                 bg={"none"}
+                onClick={() => handleClick(sections.expRef)}
+                px={2}
+                py={1}
+                rounded={"md"}
+                _hover={{
+                  textDecoration: "none",
+                  bg: useColorModeValue("gray.200", "gray.700"),
+                  color: "white",
+                }}
+                className="nav-link skills"
+                fontWeight={"bold"}
+                fontFamily={"san-serif"}
+              >
+               Experience
+              </Button>
+              <Button
+                leftIcon={<MdMilitaryTech />}
+                bg={"none"}
                 onClick={() => handleClick(sections.skillsRef)}
                 px={2}
                 py={1}
@@ -205,6 +223,22 @@ export default function Navbar({ sections }) {
                 href={"#"}
               >
                 About Me
+              </Button>
+              <Button
+                leftIcon={<MdMilitaryTech />}
+                bg={"none"}
+                onClick={() => handleClick(sections.expRef)}
+                px={2}
+                py={1}
+                rounded={"md"}
+                _hover={{
+                  textDecoration: "none",
+                  bg: "gray.200",
+                  color: "black",
+                }}
+                href={"#"}
+              >
+              Experience
               </Button>
               <Button
                 leftIcon={<MdMilitaryTech />}
