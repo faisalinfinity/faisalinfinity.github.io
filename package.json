@@ -16,6 +16,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
+    "caniuse-lite": "^1.0.30001563",
     "framer-motion": "^10.11.5",
     "framer-motion-3d": "^10.11.5",
     "github-calendar": "^2.3.2",

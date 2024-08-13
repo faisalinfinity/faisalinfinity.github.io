@@ -24,7 +24,7 @@ function Profile() {
             fontWeight="extrabold"
             size="4xl"
           >
-            1.5+
+            1.2+
           </Heading>
           <Text fontSize="2xl" color="gray.400">
             years of focused coding, endless possibilities - my portfolio of

@@ -203,7 +203,7 @@ export const backgrounds = [
   `url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='560' height='185' viewBox='0 0 560 185' fill='none'%3E%3Cellipse cx='457.367' cy='123.926' rx='102.633' ry='61.0737' transform='rotate(-180 457.367 123.926)' fill='%23ECC94B'/%3E%3Cellipse cx='160.427' cy='61.0737' rx='102.633' ry='61.0737' transform='rotate(-180 160.427 61.0737)' fill='%239F7AEA'/%3E%3Cellipse cx='193.808' cy='111.771' rx='193.808' ry='73.2292' transform='rotate(-180 193.808 111.771)' fill='%234299E1'/%3E%3Cellipse cx='337.295' cy='74.415' rx='193.808' ry='73.2292' transform='rotate(-180 337.295 74.415)' fill='%2348BB78'/%3E%3C/svg%3E")`,
 ];
 
-function TestimonialCard(props) {
+function ProjectCard(props) {
   const {
     role,
     content,
@@ -457,7 +457,7 @@ export default function Projects({ projectRef, device }) {
         mx={"auto"}
       >
         {testimonials.map((cardInfo, index) => (
-          <TestimonialCard key={index} {...cardInfo} index={index} />
+          <ProjectCard key={index} {...cardInfo} index={index} />
         ))}
       </SimpleGrid>
       <Box>
